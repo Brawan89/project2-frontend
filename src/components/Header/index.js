@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
             Click on learn more to display information for each planet{" "}
           </span>
           <div className="more-btn">
-            <b>Learn More</b>
+           <Link to="/solarsystem"> <b>Learn More</b></Link>
           </div>
         </div>
         <div className="app-picture">

@@ -12,19 +12,20 @@ const Venus = () => {
      
         <div className="header1">
         <div className="text">
-      <h1>Venus</h1>
+      <h1>Earth</h1>
       <h4>
-      Venus is the second planet from the Sun and is the second brightest object in the night sky after the Moon.
-       Venus is the second largest terrestrial planet and is sometimes referred to as the Earth’s sister planet due the their similar size and mass.
+      Earth is the third planet from the Sun and is the largest of the terrestrial planets.
+       The Earth is the only planet in our solar system not to be named after a Greek or Roman deity. 
+      The Earth was formed approximately 4.54 billion years ago and is the only known planet to support life.
       </h4>
       <div className="list">
-        <p>- Diameter: 7,521 mi</p>
-        <p>- Moons: none</p>
+        <p>- Diameter:7,917.5 mi</p>
+        <p>- Moons: 1</p>
       </div>
       </div>
       </div>
       <div className="pic" >
-      <img src="./img/venus.jpg" /></div>
+      <img src="./img/earth.jpg" /></div>
     </div>
   
    

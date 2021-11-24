@@ -35,6 +35,9 @@ const NavSolarSystem = () => {
         <Link to="/neptune" className="links">
         <li >Neptune</li>
         </Link>
+        <Link to="/quiz" className="links">
+        <li >Quiz</li>
+        </Link>
         </ul>
         </div>
         </div>
