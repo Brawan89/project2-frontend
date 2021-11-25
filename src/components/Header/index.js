@@ -9,15 +9,12 @@ const Header = () => {
         <div className="app-text">
           <h1>Welcome</h1>
           <p>
-            The Solar System consists of the Sun and its planetary system of
-            eight planets, their moons, and other non-stellar objects. It formed
-            4.6 billion years ago from the gravitational collapse of a giant
-            molecular cloud. All planets have almost circular orbits that lie
-            within a nearly flat disc called the ecliptic plane.
+          Here we show information about the solar system 
+          so log in to learn with us and test your knowledge
           </p>
-          <span>
+          {/* <span>
             Click on learn more to display information for each planet{" "}
-          </span>
+          </span> */}
           <div className="more-btn">
            <Link to="/solarsystem"> <b>Learn More</b></Link>
           </div>

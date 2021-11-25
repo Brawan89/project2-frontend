@@ -1,59 +1,74 @@
-import React , {useState} from 'react';
-import { useNavigate } from 'react-router';
-import axios from 'axios';
-
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const BASE_URL = "http://localhost:5000";
 
 const Login = () => {
-    const navigate = useNavigate();
-    const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [user, setUser] = useState(null);
 
-    const login = async (e) =>{
-        e.preventDefault();
-        try{
-            await axios
-            .post(`${BASE_URL}/user/loginUser` , {
-                email: e.target.email.value,
-                password: e.target.password.value
-            })
-            .then((response) => {
-                console.log(response.data);
-                if (response.data.userid) {
-                    console.log("login successfully");
-                    localStorage.setItem("User", response.data);
-                    navigate("/"); 
-                }
-            })
-        }catch(err){
-            console.error(err);
-        }
-    };
+  useEffect(() => {
+    const users = localStorage.getItem(user);
+    setUser(JSON.parse(users));
+  }, []);
 
-    return (
-        <>
+  const loginUser = async () => {
+    const loguser = await axios.post(`${BASE_URL}/user/loginUser`, {
+      email: email,
+      password: password,
+    });
+    console.log(loguser);
+    if (typeof loguser.data.user === "object") {
+      localStorage.setItem("User", JSON.stringify({ user: loguser.data.user }));
+      navigate("/");
+    } else {
+      console.log(loguser);
+      setMessage(loguser.data.message);
+    }
+  };
+
+  return (
+    <div>
+      {user ? (
+        <h1>
+          You are already logged in, go to <Link to="/">Recipes</Link>
+        </h1>
+      ) : (
         <div>
-        <h1>Login page</h1>
-        <form onSubmit={login}>
-        <p>Email</p>
-        <input type="email" name="email" required />
-        <p>Password</p>
-        <input type="password" name="password" required />
-        <br/>
-        {errorMessage}
-        <br/>
-        <button type="submit">Login</button>
-        <button
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        Back
-      </button>
-        </form> 
+          <h1>Login</h1>
+          {message ? <div>{message}</div> : ""}
+          <div>
+            <input
+              type="text"
+              name="email"
+              placeholder="Enter Your Email "
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Your Password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <input type="submit" value="login" onClick={loginUser} />
+          <div>
+            <p>
+              If you don't have an account,{" "}
+              <Link to="/Signup">Register now!</Link>
+            </p>
+          </div>
         </div>
-        </>
-    )
-}
+      )}
+    </div>
+  );
+};
 
 export default Login;

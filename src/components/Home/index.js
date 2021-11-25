@@ -4,13 +4,11 @@ import Footer from '../Footer';
 import Header from "../Header"
 import Navbar from '../navbar';
 
-const Home = () => {
-    const [user, setUser] = useState(localStorage.getItem("user"));
-    
+const Home = () => {    
     return (
         <div  className="container"> 
-          <Navbar/>
-           <Header user={user} setUser={setUser}/> 
+          <Navbar />
+           <Header /> 
            {/* <Header  user={user} setUser={setUser} /> */}
            <Footer/>
          

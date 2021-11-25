@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
@@ -15,9 +15,10 @@ import Saturn from "./components/Saturn";
 import Uranus from "./components/Uranus";
 import SignUp from "./components/signup";
 import Login from "./components/login";
-import Quiz from "./components/Quiz"
+import Quiz from "./components/Quiz";
 
 function App() {
+  const [user, setUser] = useState(localStorage.getItem("user"));
   return (
     <>
       {/* <Navbar/> */}
@@ -35,9 +36,12 @@ function App() {
         <Route exact path="/Saturn" element={<Saturn />} />
         <Route exact path="/uranus" element={<Uranus />} />
         <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route
+          exact
+          path="/login"
+          element={<Login user={user} setUser={setUser} />}
+        />
         <Route exact path="/quiz" element={<Quiz />} />
-        
       </Routes>
       {/* <Footer/> */}
     </>

@@ -1,0 +1,100 @@
+1. Q: How many planets are there in the Solar System? A: 7 B: 8 C: 9 D: 10 
+2. Q: What planet is closest to the sun? A: Mars B: Mercury C: Earth D: Venus 
+3. Q: What is the second planet from the sun? A: Mercury B: Earth C: Mars D: Venus
+4. Q: What is the third planet from the sun? A: Earth B: Mars C: Jupiter D: Venus
+5. Q: What is the fourth planet from the sun? A: Earth B: Mars C: Venus D: Jupiter 
+6. Q: What is the fifth planet from the sun? A: Saturn B: Mars C: Uranus D: Jupiter
+7. Q: What is the seventh planet from the sun? A: Jupiter B: Uranus C: Neptune D: Pluto 
+8. Q: What is the sixth planet from the sun? A: Saturn B: Mars C: Jupiter D: Pluto 
+9. Q: What is the eighth planet from the sun? A: Jupiter B: Pluto C: Uranus D: Neptune
+10. Q: What is the farthest planet from the sun? A: Pluto B: Mars C: Venus D: Jupiter 
+11. Q: Which planet is not a gas giant? A: Neptune B: Saturn C: Mars D: Jupiter 
+12. Q: Which planet is not a terrestrial planet? A: Saturn B: Earth C: Mars D: Venus 
+13. Q: What is the most volcanically active body in the solar system? A: Mars B: Io C: Ganymede D: Pluto
+14. Q: Which planet has the largest ring system? A: Jupiter B: Pluto C: Mercury D: Saturn
+15. Q: How much meteoritic material do scientists estamate falls on the Earth each day? A: 1 pound B: 1 ton C: 10 tons D: more than 1000 tons 
+16. Q: Which is the densest planet? A: Mars B: Earth C: Jupiter D: Pluto 
+17. Q: What is the largest terrestrial planet? A: Mars B: Mercury C: Venus D: Earth 
+18. Q: What is the only known moon of Pluto? A: Plutonia B: Charon C: Io D: Ganymede 
+19. Q: What is the Earth's radius? A: 6378 Km B: 1237 Km C: 12400 Km D: 25000 Km 
+20. Q: What is the rotational period of Earth? A: 1 year B: 48 hours C: 24 hours D: 12 hours 
+21. Q: Where is the main asteroid belt in the Solar System? A: Just outside Pluto's orbit B: Between Earth and Mars C: Between Neptune and Saturn D: Between Mars and Jupiter 
+22. Q: What asteroid was the focus of the NEAR spacecraft? A: Eros B: Io C: Gaspra D: Ida 
+23. Q: Where do most comets arrive from? A: the asteroid belt B: the Oort cloud C: the Milky Way D: Saturns rings 
+24. Q: How long could a long-period comet take to orbit around the Sun? A: 1000 years B: 10000 years C: 100000 years D: 30 million years 
+25. Q: What is the comet belt outside of Pluto's orbit called? A: the Oort cloud B: Kuiper Belt C: Main asteroid Belt D: Halley Belt
+26. Q: Which is shorter, Mercury's day or year? A: day B: year 
+27. Q: Which planet has the hottest temperatures? A: Mercury B: Mars C: Venus D: Pluto 
+28. Q: How long is Mercury's day? A: 5 minutes B: 10 Earth days C: 176 Earth days D: 3 Earth years 
+29. Q: Which moon is a moon of Mars? A: Phobos B: Io C: Ganymede D: Charon 
+30. Q: Which planet is Olympus Mons, the highest volcano in the Solar System, on? A: Jupiter B: Mars C: Venus D: Mercury 
+31. Q: What is the largest planet in the Solar System? A: Mars B: Saturn C: Neptune D: Jupiter 
+32. Q: How large is jupiter's mass when compared to the other planets in the Solar System? A: twice as big as all the other planets combined B: as big as all the other planets combined C: three times as big as all the other planets combined D: four times as big as all the other planets combined 
+33. Q: What is the Great Red Spot and Jupiter? A: A volcanic reaction that has lasted over 100 years B: A storm that has lasted over 100 years C: A storm that has lasted almost 10 years D: A giant red lake 
+34. Q: How many moons does Jupiter have? A: 12 B: 14 C: 16 D: 18 
+35. Q: Which planet has the most moons? A: Jupiter B: Mercury C: Mars D: Uranus 
+36. Q: Which planet was the first planet located through mathematical predictions rather than through regular observations of the sky? A: Neptune B: Pluto C: Uranus D: Mercury 
+37. Q: Which planet has the fastest winds, blowing at speeds of over 2,400 km (1500 miles) per hour? A: Uranus B: Neptune C: Pluto D: Saturn 
+38. Q: What is the smallest planet? A: Mercury B: Earth C: Pluto D: Venus 
+39. Q: How many years does it take Pluto to orbit around the sun? A: 3 B: 15 C: 97 D: 248 ------------------------------------- 40. Q: Which is the coldest planet of the Solar System? A: Pluto B: Earth C: Mars D: Neptune
+
+Read more at: https://www.ducksters.com/questions/solarsystem.php
+This text is Copyright © Ducksters. Do not use without permission.
+
+
+
+**************************************************************************
+                            ...............................
+                                     after login 
+                            ................................
+
+<div className="banner">
+        <div className="app-text">
+          <h1>Welcome</h1>
+          <p>
+            The Solar System consists of the Sun and its planetary system of
+            eight planets, their moons, and other non-stellar objects. It formed
+            4.6 billion years ago from the gravitational collapse of a giant
+            molecular cloud. All planets have almost circular orbits that lie
+            within a nearly flat disc called the ecliptic plane.
+          </p>
+          <span>
+            Click on learn more to display information for each planet{" "}
+          </span>
+          <div className="more-btn">
+           <Link to="/solarsystem"> <b>Learn More</b></Link>
+          </div>
+        </div>
+        <div className="app-picture">
+          <img src="./img/panar12.gif" />
+        </div>
+      </div>
+    </>
+
+********************************************************************
+                            ...............................
+                                     before login 
+                            ................................
+
+import React from 'react';
+import "./style.css";
+
+const HeaderSolerSystem = () => {
+    return (
+        <div>
+             <div className="banner1">
+            <div className="atext" >
+           <h3>The Solar System consists of the Sun and its planetary system of eight planets,
+            their moons, and other non-stellar objects. 
+            It formed 4.6 billion years ago from the gravitational collapse of a giant molecular cloud.
+           All planets have almost circular orbits that lie within a nearly flat disc called the ecliptic plane.</h3> 
+           {/* <div className="app-picture">
+                 <img src="./img/solargif.gif"/>
+                 </div> */}
+       </div>
+       </div>
+        </div>
+    )
+}
+
+export default HeaderSolerSystem;
