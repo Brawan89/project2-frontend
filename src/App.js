@@ -16,6 +16,8 @@ import Uranus from "./components/Uranus";
 import SignUp from "./components/signup";
 import Login from "./components/login";
 import Quiz from "./components/Quiz";
+import ShowResult from "./components/ShowResult";
+
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -36,14 +38,16 @@ function App() {
         <Route exact path="/Saturn" element={<Saturn />} />
         <Route exact path="/uranus" element={<Uranus />} />
         <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/quiz" element={<Quiz />} />
+        <Route exact path="/showresult" element={<ShowResult/>} />
+     
         <Route
           exact
           path="/login"
           element={<Login user={user} setUser={setUser} />}
         />
-        <Route exact path="/quiz" element={<Quiz />} />
-      </Routes>
-      {/* <Footer/> */}
+         </Routes>
+      
     </>
   );
 }

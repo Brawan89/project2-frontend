@@ -1,0 +1,107 @@
+import React from 'react';
+import "./style.css";
+import { Container } from '@material-ui/core';
+import { Router , Route } from 'react-router-dom';
+// import QuestionCategory from "./QuesCategory";
+// import Questions from "./Questions";
+// import axios from 'axios';
+
+// const BASE_URL = "http://localhost:5000";
+
+ const Quiz = () => {
+	 
+// 	const [quizes , setQuizes] = useState([]);
+
+// 	useEffect(() => {
+// 		getAllUquizes();
+// 	}, []);
+
+//   const getAllUquizes = async () =>{
+// 	  const quize = await axios.get(`${BASE_URL}/quiz/questions`)
+// 	  console.log(quize.data);
+// 	  setQuizes(quize.data);
+//   };
+
+//   return(
+	//   <Container>
+	// 	  <Router>
+	// 		  <Route path="/qucategory" element={QuestionCategory} exact >  </Route>
+	// 		  <Route path="/question" element={Questions} exact >  </Route>
+	// 	  </Router>
+	//   </Container>
+	 
+/* <div>
+		  <ul>
+		  
+		  {quizes.map((quiz , i)=>{
+			  return(
+			  <div key={quiz._id} >
+				  <li>{quiz.description}</li> */
+				  /* <li>{quiz.alternative}</li> */
+			  /* </div>
+			  )
+		  })}
+		  </ul>
+	  </div> */
+	 
+//   )
+
+}
+
+
+export default Quiz;
+///////////////////////////////////////////////
+هنا اذا بحط زر اخليه يوديني صفحة الاسئله وممكن اكتب عليه start
+ <Card className="card" style={{ margin: "50px 50px 0 50px" }}>
+        <CardHeader
+          title="Test your knowledge about the solar system"
+          titleTypographyProps={{ variant: "h3" }}
+          style={{
+            textAlign: "center",
+            backgroundColor: "gray",
+            color: "white",
+          }}
+        ></CardHeader>
+        <CardContent>
+          <TextField
+            select
+            label="select"
+            defaultValue={0}
+            helperText="Please select category"
+            className="inputText"
+            variant="outlined"
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {categories.map((c) => {
+              return (
+                <MenuItem key={c._id} value={c._id}>
+                  {c.name}
+                </MenuItem>
+              );
+            })}
+          </TextField>
+		  <TextField
+            select
+            label="select"
+            defaultValue=''
+			className="inputText"
+            onChange={(e) => setDifficulty(e.target.value)}
+            helperText="Please select category"
+            variant="outlined"
+          >
+           <MenuItem value='easy' >Easy</MenuItem>
+		   <MenuItem value='medium' >Medium</MenuItem>
+		   <MenuItem value='hard' >Hard</MenuItem> 
+          </TextField>
+		  <Button variant="contained" className="button-submit" style={{ fontSize: "25px" , marginTop: "202px" }}
+		  color="primary" onClick={submithandler}  >
+			  submit
+		  </Button>
+        </CardContent>
+      </Card>
+
+	  //// button function
+	  const submithandler = () =>{
+		navigate("/question")
+  }
+  

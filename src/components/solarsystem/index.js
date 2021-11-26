@@ -1,6 +1,6 @@
 import React from 'react';
 import "./sstyle.css";
-import {Routes , Route} from "react-router-dom"
+// import {Routes , Route} from "react-router-dom"
 import NavSolarSystem from "./../NavSolarSystem"
 // import Earth from '../Earth';
 import HeaderSolerSystem from '../HeaderSolerSystem';
