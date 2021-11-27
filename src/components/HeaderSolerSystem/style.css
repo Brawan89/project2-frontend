@@ -1,8 +1,8 @@
 
 .banner{
-  width: 80%;
+  width: 60%;
   height: 70%;
-  top: 200%;
+  top: 100%;
   left:150px;
   position: relative;
   color: white;
@@ -40,12 +40,12 @@
 .app-picture{
   position: relative;
   margin-top: 10px;
-  width: 50%;
-  margin-left: 500px;
+  width: 30%;
+  margin-left: 600px;
   /* float: right; */
 }
 .app-picture img{
-  width: 120%;
+  width: 100%;
   margin-top: -20px;
   padding-left: 50px;
 }

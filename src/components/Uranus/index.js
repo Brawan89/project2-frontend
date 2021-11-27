@@ -18,9 +18,20 @@ const Uranus = () => {
        it was not recognised as a planet due to its dimness and slow orbit. 
        Uranus became the first planet discovered with the use of a telescope.
        </h4>
+       <h4>
+       Facts about Uranus:
+         <p>Uranus was officially discovered by Sir William Herschel in 1781.
+</p>
+         <p>Uranus turns on its axis once every 17 hours, 14 minutes.
+</p>
+         <p>Uranus makes one trip around the Sun every 84 Earth years.
+</p>
+         <p>Uranus is often referred to as an “ice giant” planet.
+</p>
+       </h4>
       <div className="list">
-        <p>- Diameter: 31,518 mi</p>
-        <p>- Moons: 27</p>
+        <p> Diameter: 31,518 mi</p>
+        <p> Moons: 27</p>
       </div>
       </div>
       </div>

@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  Button,
-  CardContent,
-} from "@material-ui/core";
+import { Card, Button, CardContent } from "@material-ui/core";
 import axios from "axios";
-// import Questions from "../Questions";
 import ShowResult from "../ShowResult";
-import "./style.css"
+import "./style.css";
 
 const BASE_URL = "http://localhost:5000";
 
@@ -24,17 +19,14 @@ const Quiz = () => {
     return { __html: text };
   };
 
- 
-
   const getAllUquizes = async () => {
     const quize = await axios.get(`${BASE_URL}/quiz/questions`);
     console.log(quize.data);
 
     setQuestions(quize.data);
     setAllAnswers(
-      [...quize.data[0].answers,
-	   quize.data[0].currectanswer
-	].sort( () => Math.random() - 0.5
+      [...quize.data[0].answers, quize.data[0].currectanswer].sort(
+        () => Math.random() - 0.5
       )
     );
   };
@@ -42,10 +34,9 @@ const Quiz = () => {
     getAllUquizes();
   }, []);
 
- 
   const nextQuestion = () => {
     if (!questions[curQuestionNo].userAnswer) {
-      alert('Please select one answer !');
+      alert("Please select one answer !");
       return false;
     }
     setAllAnswers(
@@ -58,15 +49,15 @@ const Quiz = () => {
     setCurQuestionNo(curQuestionNo + 1);
   };
   const showResult = () => {
-	if (!questions[curQuestionNo].userAnswer) {
-		alert('Please select one answer !');
-		return false;
-	  }
+    if (!questions[curQuestionNo].userAnswer) {
+      alert("Please select one answer !");
+      return false;
+    }
     setResult(true);
   };
 
   const reset = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   const getAnswer = (ans) => {
@@ -76,81 +67,69 @@ const Quiz = () => {
 
   return (
     <div>
-      {/* <Card className="card" style={{ margin: "50px 50px 0 50px" }}> */}
-        {/* <CardHeader
-          title="Test your knowledge about the solar system"
-          titleTypographyProps={{ variant: "h3" }}
-          style={{
-            textAlign: "center",
-            backgroundColor: "gray",
-            color: "white",
-          }}
-        ></CardHeader> */}
-
-        {!result ? (
-          <div>
-            {questions.length > 0 && (
-              <>
-                <Card className="questionContent">
-                  <div className="question">
-                    <p
-                      className="questionText"
-                      dangerouslySetInnerHTML={createMarkUp(
-                        questions[curQuestionNo].description
-                      )}
-                    ></p>
-					</div>
-                    <hr />
-                    <CardContent>
-                      {allAnswers.map((ans, i) => {
-                        return (
-                          <div
-                            className={
-                              selected === ans ? "selected answer" : "answer"
-                            }
-                            key={i}
-                            onClick={() => {
-                              getAnswer(ans);
-                            }}
-                          >
-                            <p dangerouslySetInnerHTML={createMarkUp(ans)}></p>
-                          </div>
-                        );
-                      })}
-
-                      <div>
-                        <Button
-                          variant="outlined"
-                          color="secondary"
-                          style={{ float: "right" }}
-                          onClick={
-                            questions.length === curQuestionNo + 1
-                              ? showResult
-                              : nextQuestion
-                          }
-                        >
-                          {questions.length === curQuestionNo + 1
-                            ? "show Result"
-                            : "Next Question"}
-                        </Button>
-
-                        <Button variant="outlined" onClick={reset}>
-                          Reset
-                        </Button>
+      {!result ? (
+        <div>
+          {questions.length > 0 && (
+            <>
+              <Card className="questionContent">
+                <div className="question">
+                  <p
+                    className="questionText"
+                    dangerouslySetInnerHTML={createMarkUp(
+                      questions[curQuestionNo].description
+                    )}
+                  ></p>
+                </div>
+                <hr />
+                <CardContent>
+                  {allAnswers.map((ans, i) => {
+                    return (
+                      <div
+                        className={
+                          selected === ans ? "selected answer" : "answer"
+                        }
+                        key={i}
+                        onClick={() => {
+                          getAnswer(ans);
+                        }}
+                      >
+                        <p dangerouslySetInnerHTML={createMarkUp(ans)}></p>
                       </div>
-                    </CardContent>
-                </Card>
-              </>
-            )}
-          </div>
-        ) : (
-          <ShowResult
-            questions={questions}
-            createMarkUp={createMarkUp}
-            reset={reset}
-          />
-        )}
-     
+                    );
+                  })}
+
+                  <div>
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      style={{ float: "right" }}
+                      onClick={
+                        questions.length === curQuestionNo + 1
+                          ? showResult
+                          : nextQuestion
+                      }
+                    >
+                      {questions.length === curQuestionNo + 1
+                        ? "show Result"
+                        : "Next Question"}
+                    </Button>
+
+                    <Button variant="outlined" onClick={reset}>
+                      Reset
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </>
+          )}
+        </div>
+      ) : (
+        <ShowResult
+          questions={questions}
+          createMarkUp={createMarkUp}
+          reset={reset}
+        />
+      )}
     </div>
   );
 };

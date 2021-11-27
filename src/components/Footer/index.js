@@ -4,6 +4,7 @@ import {BsTwitter , BsGithub , BsFacebook , BsInstagram} from "react-icons/bs"
 
  const Footer = () => {
     return (
+        <div className="footer" >
         <div className="social-icons">
             <ul>
                 <li> <BsFacebook /> </li>
@@ -11,6 +12,7 @@ import {BsTwitter , BsGithub , BsFacebook , BsInstagram} from "react-icons/bs"
                 <li> <BsInstagram/> </li>
                 <li> <BsTwitter /> </li>
             </ul>
+        </div>
         </div>
     )
 }

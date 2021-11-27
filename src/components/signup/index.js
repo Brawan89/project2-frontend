@@ -1,28 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const BASE_URL = "http://localhost:5000";
+
 const SignUp = () => {
   const navigate = useNavigate();
-
   const register = async (e) => {
     e.preventDefault();
-
     try {
-      await axios
+      const resp = await axios
         .post(`${BASE_URL}/user/signupUser`, {
-          userName: e.target.username.value,
+          userName: e.target.name.value,
           email: e.target.email.value,
           password: e.target.password.value,
         })
         .then((response) => {
           console.log(response.data);
-          if (response.data._id) {
+          if (response.data) {
             console.log("registered successfully");
-            prompt()
-            localStorage.setItem("User", response.data);
+            localStorage.setItem("User", JSON.stringify(response.data));
             navigate("/");
           }
         });
@@ -33,22 +31,53 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="RegBox">
-        <form onSubmit={register}>
-          <h1> Register </h1>
-          <input type="text" name="username" placeholder="username" required />
-          <input type="email" name="email" placeholder="email" />
-          <input type="password" name="password" placeholder="password" />
-          <button type="submit">Register</button>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            Back
-          </button>
-        </form>
-      </div>
+      <form onSubmit={register}>
+        <h1 className="heade">Register</h1>
+        <div className="inpt">
+          <input
+            className="inp"
+            type="text"
+            placeholder="Name"
+            name="name"
+            required
+          />
+          <input
+            className="inp"
+            type="email"
+            placeholder="Email"
+            name="email"
+          />
+          <input
+            className="inp"
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+        </div>
+        <div>
+        <button className="bt" type="submit">
+          Register
+        </button>
+        <button
+          className="bt"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Cancle
+        </button>
+          </div>
+        <div>
+          <p className="ptext">
+            If you have already account please go to
+            <Link className="links-btn" to="/login">
+              {" "}
+              Login{" "}
+            </Link>
+          </p>
+        </div>
+      </form>
     </>
   );
 };

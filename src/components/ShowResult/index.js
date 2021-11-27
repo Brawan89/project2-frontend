@@ -13,11 +13,11 @@ const ShowResult = ({ questions, createMarkUp, reset }) => {
   }, []);
   
   return (
-    <div>
+    <div className="boxes" >
       <Card
-        style={{ marginTop: "50px", backgroundColor: "rgb(186, 233, 233)" }}
+        style={{ marginTop: "50px" , backgroundColor: "rgba(211, 211, 211, 0.87)" }}
       >
-        <CardHeader
+        {/* <CardHeader
           title="Marksheet"
           titleTypographyProps={{ variant: "h3" }}
           style={{
@@ -25,7 +25,7 @@ const ShowResult = ({ questions, createMarkUp, reset }) => {
             backgroundColor: "rgb(73, 189, 235)",
             color: "white",
           }}
-        ></CardHeader>
+        ></CardHeader> */}
         <CardContent>
           <p
             style={{
@@ -57,8 +57,8 @@ const ShowResult = ({ questions, createMarkUp, reset }) => {
               ></p>
             </div>
             <hr />
-            <CardContent>
-              <div style={{ textAlign: "center" }} 
+            <CardContent  >
+             <div style={{ textAlign: "center" }} 
               className="answerq">
                 <b>Your Answer: </b>{" "}
                 <p
@@ -73,7 +73,7 @@ const ShowResult = ({ questions, createMarkUp, reset }) => {
                   className="correct"
                 ></p>
               </div>
-              <p style={{ float: "right", color: "blue" }}>
+              <p style={{ float: "right", color: "rgb(121,87,133)" , fontSize: "20px" }}>
                 <b>Mark : {q.userAnswer === q.currectanswer ? "10" : "00"}</b>
               </p>
             </CardContent>
@@ -84,14 +84,17 @@ const ShowResult = ({ questions, createMarkUp, reset }) => {
         <Button
           variant="contained"
           onClick={reset}
-          style={{ marginTop: "35px", marginBottom: "15px", width: "100%" }}
+          style={{ marginTop: "35px", marginBottom: "15px", width: "100%" , backgroundColor:"rgb(121,87,133)" }}
           color="primary"
         >
           Reset
         </Button>
+        
       </div>
     </div>
+    
   );
 };
+
 
 export default ShowResult;

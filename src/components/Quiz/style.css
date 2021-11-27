@@ -1,18 +1,17 @@
-
-body {
-  /* background-image: url('https://wallpaperaccess.com/full/2384075.jpg'); */
-  /* background-color: green; */
+.boxes{
+  /* background-color: rgba(211, 211, 211, 0.87); */
+    width: 70%;
+    height: 100%;
+    border: 15px solid rgb(121,87,133);
+    padding: 50px;
+    margin: 20px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 15px;
 }
 .answer :hover{
  cursor: pointer;
-}
-
-.card {
-  /* background-image: url('https://wallpapercave.com/wp/wp2835925.png'); */
-}
-
-.button-submit :hover{ 
- font-size: 2.0rem;
 }
 
 .button-submit {
@@ -24,21 +23,13 @@ body {
  width: 100%;
 }
 
-/* .loader {
- position: fixed;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- transform: -webkit-translate(-50%, -50%);
- transform: -moz-translate(-50%, -50%);
- transform: -ms-translate(-50%, -50%);
- color: darkred;
-} */
+
 
 .question {
  margin-top: 15px;
  margin-left: 25px;
- height: 30px;
+ height: 50px;
+ margin-bottom: 20px;
 }
 
 .questionText {
@@ -48,29 +39,28 @@ body {
 
 .questionContent {
  margin-top: 100px;
-}
+ width: 800px;
+ height: 500px;
+ padding: 50px;
+ margin-left: 350px;
 
-.answer :hover{
- font-size: 1.9rem;
 }
 
 .answer {
  margin-bottom: 30px;
- border-bottom: 1px solid blue;
+ border-bottom: 1px solid ;
  font-size: 1.5rem;
 }
 
 .answerq {
  margin-bottom: 30px;
- border-bottom: 1px solid blue;
+ border-bottom: 1.5px solid;
  font-size: 1.52rem;
 }
 
 .selected {
- color: rgb(33, 121, 194);
  font-weight: bold;
- background-color: cadetblue;
-
+ background-color: rgb(33, 121, 194);
 }
 
 .correct {

@@ -1,20 +1,22 @@
 
 .banner{
-    width: 80%;
-    height: 70%;
-    top: 200%;
+    width: 100%;
+    height: 100%;
+    /* top: 200%; */
+    bottom: 100%;
     left:150px;
+    padding: 20px;
     position: relative;
     color: white;
 }
 .app-text{
-    width: 40%;
+    width: 100%;
     float: left;
-    margin-top: 50px;
-    padding-top: 20px;
+    margin-top: 80px;
+    padding-top: 60px;
 }
 .app-text h1{
-    font-size: 43px;
+    /* font-size: 46px; */
     text-align: center;
     width: 400px;
     position: relative;
@@ -22,53 +24,55 @@
     /* padding: 50px; */
 }
 .app-text p{
-    font-size: 15px;
+    /* font-size: 30px; */
     width: 350px;
     text-align: center;
     margin: 20px 0 20px 20px;
-    line-height: 25px;
+    /* line-height: 25px; */
     /* padding: 50px; */
 }
-.app-text span{
+/* .app-text b{
     font-size: 13px;
-    width: 280px;
-    text-align: center;
-    margin: 10px 0 10px 25px;
+    width: 100px;
+    text-align: left;
+    margin: 10px 0 10px 15px;
     line-height: 20px;
     color: #7f808a;
-}
+} */
 .app-picture{
     position: relative;
     margin-top: 10px;
-    width: 50%;
-    margin-left: 500px;
+    width: 40%;
+    margin-left: 700px;
     /* float: right; */
 }
 .app-picture img{
-    width: 120%;
+    width: 100px;
     margin-top: -20px;
     padding-left: 50px;
 }
 
 .more-btn{
-    /* top:40px;*/
+    /* top:40px; */
     /* right: 20px; */
     /* margin-right: 200px; */
-    position: absolute;
+    position: relative;
     text-align: center;
-    width: 400px;
-    text-decoration: none;
+    width: 260px;
+    /* text-decoration: none; */
     color:rgb(255, 230, 230);
     border: 2px solid transparent;
     border-radius: 20px;
     background-image: radial-gradient(circle at top left,#fd00da,#19d7f8);
     background-origin: border-box;
     background-clip: content-box,border-box;
-    padding-top: 10px;
+    padding-top: 20px;
+    margin-bottom: 500px;
 
   }
   .more-btn b{
-    display: block;
-    padding: 8px ;
-    
+    text-decoration: none;
+    color:rgb(255, 230, 230);
+    display: inline;
+    padding: 10px ;  
   }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./style.css"
 
 const BASE_URL = "http://localhost:5000";
 
@@ -28,29 +29,30 @@ const Login = () => {
     } else {
       console.log(loguser);
       setMessage(loguser.data.message);
+      alert("please write your email and password")
     }
   };
 
   return (
-    <div>
-      {user ? (
-        <h1>
-          You are already logged in, go to <Link to="/">Recipes</Link>
-        </h1>
-      ) : (
-        <div>
-          <h1>Login</h1>
+    <div className="bodyform">
+        <div className="login" >
+          
+          <h1 className="heade" >Login</h1>
           {message ? <div>{message}</div> : ""}
-          <div>
+          <div className="loginHeader">
+          <div  className="inpt">
             <input
+            className="inp"
               type="text"
               name="email"
               placeholder="Enter Your Email "
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <br />
+            </div>
+            <div>
             <input
+            className="inp"
               type="password"
               name="password"
               placeholder="Enter Your Password"
@@ -58,15 +60,16 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <input type="submit" value="login" onClick={loginUser} />
           <div>
-            <p>
-              If you don't have an account,{" "}
-              <Link to="/Signup">Register now!</Link>
-            </p>
+          <input className="bt-sm" type="submit" value="login" onClick={loginUser} />
+          
+            <button className="bt-sm" >
+              <Link className="links" to="/Signup">Register</Link>
+            </button>
+          </div>
           </div>
         </div>
-      )}
+     
     </div>
   );
 };
