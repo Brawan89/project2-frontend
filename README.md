@@ -1,6 +1,5 @@
 name project: #  **Solar System**
 
-###### contents:
 
 ## Trello:
 
@@ -13,4 +12,7 @@ project plan : (https://trello.com/b/acHHFp9k/project2)
 - MongoDB
 - CSS
 
-- [] \ packages
+
+# Packages:
+100. First list item
+     - First nested list item
