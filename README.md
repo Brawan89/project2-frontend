@@ -1,3 +1,16 @@
-# name project: **Solar System**
-# project plan in trello: (https://trello.com/b/acHHFp9k/project2)
+name project: #  **Solar System**
 
+###### contents:
+
+## Trello:
+
+project plan : (https://trello.com/b/acHHFp9k/project2)
+
+## Technology:
+- React js
+- Node js 
+- Express js
+- MongoDB
+- CSS
+
+[] \ packages
