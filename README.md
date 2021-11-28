@@ -14,8 +14,10 @@ project plan : (https://trello.com/b/acHHFp9k/project2)
 
 
 # Packages:
-100. First list item
-     - First nested list item
-
-- [ ] \(Optional) Open a followup issue
+```
+axios
+@material-ui/core
+react-icons
+react-router-dom
+```
 
