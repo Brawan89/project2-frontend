@@ -19,5 +19,10 @@ axios
 @material-ui/core
 react-icons
 react-router-dom
+cors
+express
+mongoose
 ```
+
+
 
